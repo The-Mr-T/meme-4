@@ -24,7 +24,7 @@ function [ nuI ] = getSoundInfo( r_r, r_s, t, deltat, vt_r, vt_s, vs )
 
     dI = d / 1000 * (0.3 + 0.005 * (nuI(1) - 100));
 
-    nuI(2) = 100 - dI - 20 * log(d / 10);
-    display(d);
+    spread = 8 * log(d/10);
+    nuI(2) = 100 - dI - spread;
 end
 
