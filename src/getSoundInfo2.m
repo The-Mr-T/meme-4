@@ -1,4 +1,4 @@
-function [ nuI ] = getSoundInfo2( vt1x, vt2x, vt2y, t)
+function nuI = getSoundInfo2( vt1x, vt2x, vt2y, t)
     % Calcul de la vitesse du son
     h = 10;
     c_son = (331.3 + 0.606 * h);
