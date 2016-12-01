@@ -1,3 +1,10 @@
+% IN:
+% vt1x = La vitesse en x du premier train (m/s)
+% vt2x = La vitesse en x du deuxieme train (m/s)
+% vt2y =  La vitesse en y du deuxieme train (m/s)
+% t = le temps présent
+% OUT:
+% nuI = le delta-t
 function nuI = getSoundInfo2( vt1x, vt2x, vt2y, t)
     % Calcul de la vitesse du son
     h = 10;
