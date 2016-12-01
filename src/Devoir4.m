@@ -34,21 +34,27 @@ r_2 = [3000 2000;];
 
 while t <= 101
     t = t + 1;
-    deltat = 0;
+    %deltat = 0;
     nuIT1(t,:) = [0 0;];
     nuIT2(t,:) = [0 0;];
     
-    while t - deltat > 0 && nuIT1(t,1) == 0 && t - deltat < 80
+    %while t - deltat > 0 && nuIT1(t,1) == 0 && t - deltat < 80
+    deltat = getSoundInfo2(vt_1(1), vt_2(1), vt_2(2), t);
+    if t-ceil(deltat) > 0  && t - deltat < 80
         nuIT1(t,:) = getSoundInfo(r_1, r_2, t, deltat, vt_1, vt_2, 170);
-        deltat = deltat + 1;
+        %deltat = deltat + 1;
     end
     
-    deltat = 0;
-    
-    while t - deltat > 0 && nuIT2(t,1) == 0 && t - deltat < 80
+    deltat = getSoundInfo2(vt_2(1), vt_1(1), vt_1(2), t);
+    if t-ceil(deltat) > 0  && t - deltat < 80
         nuIT2(t,:) = getSoundInfo(r_2, r_1, t, deltat, vt_2, vt_1, 120);
-        deltat = deltat + 1;
+        %deltat = deltat + 1;
     end
+    
+    %while t - deltat > 0 && nuIT2(t,1) == 0 && t - deltat < 80
+    %    nuIT2(t,:) = getSoundInfo(r_2, r_1, t, deltat, vt_2, vt_1, 120);
+    %    deltat = deltat + 1;
+    %end
     
     %%%%%%%%%%
     %%% 4 etape: On fait avancer les trains
